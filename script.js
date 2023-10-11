@@ -1,4 +1,5 @@
-document.getElementById("valor").innerHTML="15";
+
+document.getElementById("valor").innerHTML = "15";
 
 let sliderElement = document.querySelector("#slider");
 let buttonElement = document.querySelector("#button");
@@ -8,28 +9,53 @@ let password = document.querySelector("#password");
 
 let containerPassword = document.querySelector("#container-password");
 
-let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-var novaSenha ="";
+let useUpper, useLower, useNumbers, useSymbols; // Defina essas variáveis aqui, pois seus estados podem mudar
 
+let charset = "abcdefghijklmnopqrstuvwxyz";
+let upperCharset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numberCharset = "1234567890";
+let symbolCharset = "!@#$%^&*()_+";
+var novaSenha = "";
 
-slider.oninput = function(){
+sliderElement.oninput = function() {
     sizePassword.innerHTML = this.value;
 }
 
-function generatePassword(){
+function generatePassword() {
+    useUpper = document.getElementById("upperLetters").checked;
+    useLower = document.getElementById("lowLetters").checked;
+    useNumbers = document.getElementById("numbers").checked;
+    useSymbols = document.getElementById("symbols").checked;
 
     let pass = "";
-
-    for(let i = 0, n = charset.length; i < sliderElement.value; ++i){
-        pass += charset.charAt(Math.floor(Math.random() * n));
+    
+    const length = sliderElement.value; // Obtenha o valor atual do controle deslizante
+    let charsetToUse = charset; // Comece com o conjunto de caracteres padrão
+    
+    if (useUpper) {
+        charsetToUse += upperCharset;
     }
-    containerPassword.classList.remove("hide");    
+    if (useNumbers) {
+        charsetToUse += numberCharset;
+    }
+    if (useSymbols) {
+        charsetToUse += symbolCharset;
+    }
+
+    for (let i = 0, n = charsetToUse.length; i < length; ++i) {
+        pass += charsetToUse.charAt(Math.floor(Math.random() * n));
+    }
+    containerPassword.classList.remove("hide");
     password.innerHTML = pass;
     novaSenha = pass;
 }
 
-function copyPassword(){
-    navigator.clipboard.writeText(novaSenha);
-    alert("Senha copiada com sucesso!"); 
+function copyPassword() {
+    if (novaSenha) {
+        navigator.clipboard.writeText(novaSenha);
+        alert("Senha copiada com sucesso!");
+    } else {
+        alert("Nenhuma senha gerada ainda.");
+    }
 }
 

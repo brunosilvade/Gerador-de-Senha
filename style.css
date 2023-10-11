@@ -29,6 +29,13 @@ body {
   color: #fff;
   font-size: 22px;
 }
+.container-checkbox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+}
 
 
 .slider {
