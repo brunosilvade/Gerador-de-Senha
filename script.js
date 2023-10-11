@@ -11,7 +11,8 @@ let containerPassword = document.querySelector("#container-password");
 
 let useUpper, useLower, useNumbers, useSymbols; // Defina essas variáveis aqui, pois seus estados podem mudar
 
-let charset = "abcdefghijklmnopqrstuvwxyz";
+let charset = "";
+let lowerCharset = "abcdefghijklmnopqrstuvwxyz"
 let upperCharset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numberCharset = "1234567890";
 let symbolCharset = "!@#$%^&*()_+";
@@ -32,6 +33,9 @@ function generatePassword() {
     const length = sliderElement.value; // Obtenha o valor atual do controle deslizante
     let charsetToUse = charset; // Comece com o conjunto de caracteres padrão
     
+    if (useLower) {
+        charsetToUse += lowerCharset;
+    } //
     if (useUpper) {
         charsetToUse += upperCharset;
     }
