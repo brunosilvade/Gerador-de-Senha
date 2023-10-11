@@ -26,7 +26,7 @@ This is a simple web application that generates random passwords. It can be a ha
 
 ## Demo
 
-You can try the live demo here: 
+You can try the live demo here: https://brunosilvade.github.io/Gerador-de-Senha/
 
 ## License
 
