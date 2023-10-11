@@ -22,7 +22,7 @@ This is a simple web application that generates random passwords. It can be a ha
 2. Open the `index.html` file in your web browser.
 3. Customize your password preferences (length and character types).
 4. Click the "Generate Password" button.
-5. Click the "Copy to Clipboard" button to copy the generated password.
+5. Click the "password" button to copy the generated password.
 
 ## Demo
 
