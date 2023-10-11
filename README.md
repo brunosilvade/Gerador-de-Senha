@@ -1,4 +1,4 @@
-# Random Password Generator
+# :key: Random Password Generator
 
 
 This is a simple web application that generates random passwords. It can be a handy tool for creating strong and secure passwords for your online accounts. You can customize the length and character types of the generated passwords to suit your needs.
