@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="custom-alert" class="custom-modal hide" style="display: none">
+      <div class="modal-content">
+        <h2>Alerta Personalizado?</h2>
+        <p>Mensagem</p>
+        <button id="custom-alert-button">Fechar</button>
+      </div>
+    </div>
     <img class="logo" src="./assets/logo.png" alt="Gerador de Senha logo" />
     <main class="container-input">
       <span>Tamanho <span id="valor"></span> caracteres</span>
@@ -21,7 +28,7 @@
         value="15"
       />
       <div class="container-checkbox">
-        <input type="checkbox" id="lowLetters" checked/> <br />
+        <input type="checkbox" id="lowLetters" checked /> <br />
         <label for="lowLetters">Minúsculas</label><br />
         <input type="checkbox" id="upperLetters" />
         <label for="upperLetters">Maiúsculas</label><br />
@@ -34,6 +41,7 @@
         Gerar Senha
       </button>
     </main>
+
     <div
       id="container-password"
       onclick="copyPassword()"
@@ -43,6 +51,7 @@
       <span id="password" class="password"></span>
       <span class="tooltip">Clique na senha para copiar ☝️ </span>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

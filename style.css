@@ -37,7 +37,6 @@ body {
   align-items: center;
 }
 
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -106,14 +105,59 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease-in-out;
-}
+};
 
 .hide {
   display: none;
-}
+};
 
 .container-password:hover .tooltip {
   visibility: visible;
   bottom: 50px;
   opacity: 1;
+};
+
+/* Estilo para o contêiner do alert */
+.custom-modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centralizar verticalmente e horizontalmente */
+}
+
+.modal-content {
+  position: fixed;
+  background-color: #181818;
+  width: 25%;
+  color: white;
+  border: 1px solid rgba(173, 216, 230, 0.5);
+  border-radius: 42px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  align-items: center;
+  
+  /* Centralize verticalmente e horizontalmente */
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-content p {
+  margin: 10px 0; /* Adicione margem em cima e embaixo do parágrafo */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 42px;
+  cursor: pointer;
 }
